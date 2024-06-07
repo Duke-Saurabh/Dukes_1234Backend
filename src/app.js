@@ -3,6 +3,7 @@ import path from 'path';
 import { fileURLToPath } from 'url'; 
 import cookieParser from "cookie-parser";
 import cors from "cors";
+import userRouter from './routes/user.routes.js';
 
 const app = express();
 
@@ -18,12 +19,15 @@ app.use(cors({
     credentials: true
 }));
 
-
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cookieParser());
 
-import userRouter from './routes/user.routes.js';
-
 app.use("/api/v1/users", userRouter);
 
+// Root route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
+});
+
 export { app };
+
