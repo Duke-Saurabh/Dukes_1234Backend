@@ -17,7 +17,7 @@ router.post('/register', upload.fields([{ name: 'userPhoto', maxCount: 1 }]), re
 router.post('/refresh-token', refreshAccessToken);
 
 // Secured routes (requires authentication)
-router.post('/password', authmiddleware, changePassword);
+router.post('/password', changePassword);
 router.post('/:otherUserName/message/send', authmiddleware, createMessage);
 router.post('/:otherUserName/message/:page', authmiddleware, sendMessBox);
 router.post('/logout', logout);

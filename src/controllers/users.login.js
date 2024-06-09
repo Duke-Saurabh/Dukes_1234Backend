@@ -21,7 +21,7 @@ const sendTokens = async (user, res) => {
         
         // Perform field selection
          const resUser= await User.findById(user._id).select('-password -securityKey -refreshToken');
-         console.log(resUser);
+        //  console.log(resUser);
 
          // Send the access token, refresh token, and selected user fields to the client
          res.cookie('accessToken', accessToken, { httpOnly: true, secure: true })
