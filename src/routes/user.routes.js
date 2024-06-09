@@ -8,10 +8,12 @@ import { refreshAccessToken } from '../middlewares/refreshAccessToken.middleware
 import { createMessage } from '../controllers/users.loginedpage.createMessage.js';
 import { sendMessBox } from '../controllers/users.loginedPage.sendMessBox.js';
 import { changePassword } from '../controllers/users.changePassword.js';
+import { test } from '../controllers/users.test.js';
 
 const router = express.Router();
 
 // Public routes
+router.get('/test',test);
 router.post('/login', login);
 router.post('/register', upload.fields([{ name: 'userPhoto', maxCount: 1 }]), register);
 router.post('/refresh-token', refreshAccessToken);
