@@ -15,6 +15,9 @@
     ],
     "cors": {
     "origin":"*"
+    },
+    "commands": {
+      "build": "exit 1"
     }
   }
   
